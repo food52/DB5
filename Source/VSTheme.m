@@ -131,7 +131,7 @@ static UIColor *colorWithHexString(NSString *hexString);
     UIColor *color;
     
     if (key != nil) {
-        color = [self colorForName:key];
+        color = [self colorForKey:key];
     } else {
         color = [UIColor blackColor];
     }
