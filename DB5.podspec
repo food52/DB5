@@ -8,7 +8,7 @@
     "Q Branch": "support@qbranch.co"
   },
   "source": {
-    "git": "https://github.com/food52/DB5.git"
+    "git": "https://github.com/quartermaster/DB5.git"
   },
   "source_files": [
     "Source",
