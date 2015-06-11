@@ -13,9 +13,9 @@
 
 @interface VSThemeLoader : NSObject
 
-@property (nonatomic, strong, readonly) VSTheme *defaultTheme;
-@property (nonatomic, strong, readonly) NSArray *themes;
+@property (nonatomic, strong, readonly) VSTheme  * __nullable defaultTheme;
+@property (nonatomic, strong, readonly) NSArray  * __nullable themes;
 
-- (VSTheme *)themeNamed:(NSString *)themeName;
+- (VSTheme * __nullable)themeNamed:(NSString * __nonnull)themeName;
 
 @end

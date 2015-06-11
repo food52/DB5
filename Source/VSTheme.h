@@ -20,34 +20,34 @@ typedef NS_ENUM(NSUInteger, VSTextCaseTransform) {
 
 @interface VSTheme : NSObject
 
-- (id)initWithDictionary:(NSDictionary *)themeDictionary;
+- (id __nullable)initWithDictionary:(NSDictionary * __nonnull)themeDictionary;
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, weak) VSTheme *parentTheme; /*can inherit*/
+@property (nonatomic, strong) NSString * __nullable name;
+@property (nonatomic, weak) VSTheme * __nullable parentTheme; /*can inherit*/
 
-- (BOOL)boolForKey:(NSString *)key;
-- (NSString *)stringForKey:(NSString *)key;
-- (NSInteger)integerForKey:(NSString *)key;
-- (CGFloat)floatForKey:(NSString *)key;
-- (UIImage *)imageForKey:(NSString *)key; /*Via UIImage imageNamed:*/
-- (UIColor *)colorForKey:(NSString *)key; /*123ABC or #123ABC: 6 digits, leading # allowed but not required*/
-- (UIEdgeInsets)edgeInsetsForKey:(NSString *)key; /*xTop, xLeft, xRight, xBottom keys*/
-- (UIFont *)fontForKey:(NSString *)key; /*x and xSize keys*/
-- (CGPoint)pointForKey:(NSString *)key; /*xX and xY keys*/
-- (CGSize)sizeForKey:(NSString *)key; /*xWidth and xHeight keys*/
-- (NSTimeInterval)timeIntervalForKey:(NSString *)key;
+- (BOOL)boolForKey:(NSString * __nonnull )key;
+- (NSString * __nullable)stringForKey:(NSString * __nonnull )key;
+- (NSInteger)integerForKey:(NSString * __nonnull )key;
+- (CGFloat)floatForKey:(NSString * __nonnull )key;
+- (UIImage * __nullable)imageForKey:(NSString * __nonnull )key; /*Via UIImage imageNamed:*/
+- (UIColor * __nonnull)colorForKey:(NSString * __nonnull )key; /*123ABC or #123ABC: 6 digits, leading # allowed but not required*/
+- (UIEdgeInsets)edgeInsetsForKey:(NSString * __nonnull )key; /*xTop, xLeft, xRight, xBottom keys*/
+- (UIFont * __nonnull)fontForKey:(nonnull NSString *)key; /*x and xSize keys*/
+- (CGPoint)pointForKey:(nonnull NSString *)key; /*xX and xY keys*/
+- (CGSize)sizeForKey:(nonnull NSString *)key; /*xWidth and xHeight keys*/
+- (NSTimeInterval)timeIntervalForKey:(nonnull NSString *)key;
 
-- (UIViewAnimationOptions)curveForKey:(NSString *)key; /*Possible values: easeinout, easeout, easein, linear*/
-- (VSAnimationSpecifier *)animationSpecifierForKey:(NSString *)key; /*xDuration, xDelay, xCurve*/
+- (UIViewAnimationOptions)curveForKey:(nonnull NSString *)key; /*Possible values: easeinout, easeout, easein, linear*/
+- (VSAnimationSpecifier * __nonnull)animationSpecifierForKey:(nonnull NSString *)key; /*xDuration, xDelay, xCurve*/
 
-- (VSTextCaseTransform)textCaseTransformForKey:(NSString *)key; /*lowercase or uppercase -- returns VSTextCaseTransformNone*/
+- (VSTextCaseTransform)textCaseTransformForKey:(nonnull NSString *)key; /*lowercase or uppercase -- returns VSTextCaseTransformNone*/
 
 @end
 
 
 @interface VSTheme (Animations)
 
-- (void)animateWithAnimationSpecifierKey:(NSString *)animationSpecifierKey animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
+- (void)animateWithAnimationSpecifierKey:(nonnull NSString *)animationSpecifierKey animations:( void (^ __nonnull )(void))animations completion:( void (^ __nullable )(BOOL finished))completion;
 
 @end
 
