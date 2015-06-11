@@ -31,6 +31,8 @@ typedef NS_ENUM(NSUInteger, VSTextCaseTransform) {
 - (CGFloat)floatForKey:(NSString * __nonnull )key;
 - (UIImage * __nullable)imageForKey:(NSString * __nonnull )key; /*Via UIImage imageNamed:*/
 - (UIColor * __nonnull)colorForKey:(NSString * __nonnull )key; /*123ABC or #123ABC: 6 digits, leading # allowed but not required*/
+- (UIColor* __nonnull)colorForName:(NSString * __nonnull)name; /* Returns a color based on another DB5 entry key name which can be resolved to a color */
+
 - (UIEdgeInsets)edgeInsetsForKey:(NSString * __nonnull )key; /*xTop, xLeft, xRight, xBottom keys*/
 - (UIFont * __nonnull)fontForKey:(nonnull NSString *)key; /*x and xSize keys*/
 - (CGPoint)pointForKey:(nonnull NSString *)key; /*xX and xY keys*/

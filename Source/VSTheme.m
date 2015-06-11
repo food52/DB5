@@ -126,6 +126,19 @@ static UIColor *colorWithHexString(NSString *hexString);
 	return color;
 }
 
+- (UIColor*)colorForName:(NSString *)name {
+    NSString* key = [self stringForKey:name];
+    UIColor *color;
+    
+    if (key != nil) {
+        color = [self colorForName:key];
+    } else {
+        color = [UIColor blackColor];
+    }
+    
+    return color;
+}
+
 
 - (UIEdgeInsets)edgeInsetsForKey:(NSString *)key {
 
